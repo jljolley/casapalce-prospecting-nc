@@ -1,0 +1,97 @@
+# Scoring config  (Section 6 of the build spec)
+#
+# Deterministic, additive. Fully editable here — changing a weight must NOT
+# require a code change. scoring.py reads this file at runtime.
+#
+# Final score per signal:
+#   score  = base_points[source]
+#          + focus_hub        (if hub in focus_hubs)
+#          + icp_fit          (if value_amount within icp_value_band)
+#          + residential_or_small   (negative; if below small_value_threshold
+#                                    OR permit type matches residential_keywords)
+#          + compounding * (distinct_source_count - 1)
+#          + already_in_crm   (negative; if CRM dedupe set in_crm = 1)
+#   clamp to [0, 100]
+
+# ---- Base points per source ----
+# All five permit feeds share the same weight. LiensNC is highest (earliest
+# signal) but is a manual-import source, scored only once its CSV is imported.
+base_points:
+  liensnc: 40            # manual import
+  permit_meck: 35
+  permit_raleigh: 35
+  permit_durham: 35
+  permit_greensboro: 35
+  permit_winstonsalem: 35
+  lien: 35               # manual import
+  license: 25            # manual import
+  osha: 20
+
+# ---- Modifiers ----
+modifiers:
+  focus_hub: 15          # hub is in focus_hubs (below)
+  icp_fit: 10            # value_amount falls within icp_value_band
+  compounding: 10        # per ADDITIONAL distinct source on the same company
+  residential_or_small: -10   # residential permit type OR value below threshold
+  already_in_crm: -15    # CRM dedupe (Section 4a) flagged in_crm = 1
+
+# ---- Which hubs get the focus_hub bonus ----
+# Must match hub names in counties.yaml.
+focus_hubs:
+  - Triangle
+  - Triad
+
+# ---- ICP value band (project value, USD) ----
+# Mid-size commercial. Tune freely.
+icp_value_band: [250000, 20000000]
+
+# Below this project value, apply the residential_or_small penalty.
+small_value_threshold: 75000
+
+# ---- Residential vs commercial classification ----
+# Used to (a) filter permit pulls toward commercial and (b) apply the
+# residential_or_small penalty. Case-insensitive substring match against the
+# permit type / description / class field.
+#
+# residential_keywords: if a permit's type text matches any of these AND none
+# of commercial_keywords, treat it as residential -> penalty.
+residential_keywords:
+  - single family
+  - single-family
+  - sfr
+  - duplex
+  - townhome
+  - townhouse
+  - residential
+  - dwelling
+  - manufactured home
+  - mobile home
+  - accessory dwelling
+  - adu
+  - deck
+  - pool
+  - reroof
+  - re-roof
+  - residential alteration
+
+commercial_keywords:
+  - commercial
+  - new commercial
+  - tenant
+  - tenant upfit
+  - tenant improvement
+  - upfit
+  - shell
+  - core and shell
+  - multi-family
+  - multifamily
+  - apartment
+  - mixed use
+  - mixed-use
+  - office
+  - retail
+  - warehouse
+  - industrial
+  - institutional
+  - hotel
+  - restaurant

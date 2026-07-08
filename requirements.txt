@@ -1,0 +1,6 @@
+requests
+pyyaml
+python-dateutil
+rapidfuzz
+openpyxl
+click

@@ -1,0 +1,198 @@
+# Automated source config (Section 1 of the build spec)
+#
+# Each block below is one adapter. `enabled: false` sources are not yet wired
+# up -- their layer_url/field_map get filled in during the phase that builds
+# them (Phase 2 = osha, Phase 3 = the five permit_* blocks). Discover the live
+# endpoint at build time and write it here; never hard-code a guessed URL.
+
+fixture:
+  # Phase-1 proof harness only -- not a real government source. See
+  # src/adapters/fixture.py. Safe to leave enabled; it never hits the network.
+  enabled: true
+
+osha:
+  enabled: true
+  # Confirmed live 2026-07-08 against apiprod.dol.gov/v4/datasets: agency=OSHA,
+  # api_url=inspection, tablename=OSHA_inspection. Auth is X-API-KEY as a query
+  # param (not a header, despite older docs implying otherwise). No total-count
+  # in the response -- adapter pages until a page returns fewer than page_size.
+  base_url: "https://apiprod.dol.gov/v4/get/OSHA/inspection/json"
+  api_key_env: DOL_API_KEY
+  state: NC
+  naics_prefix: "23"       # construction NAICS codes only
+  page_size: 5000           # API max is 10000 rows or 5MB/request, whichever first
+  date_field: open_date     # filter: open_date > since
+
+permit_meck:
+  enabled: true
+  # Confirmed live 2026-07-08: ArcGIS Online item fc9d171ecd4d44a58c7dad840cd58aa2
+  # ("Building Permit Locations", owner MecklenburgCoNC) resolves to this
+  # FeatureServer layer, hosted on the county's own ArcGIS Server (not
+  # services.arcgis.com). Discovered via arcgis.com/sharing/rest/search, not
+  # guessed.
+  layer_url: "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer/0"
+  date_field: issuedate
+  # permittype is a clean, low-cardinality field (Commercial/One-Two Family/
+  # Rehab/School/blank) -- excluding the dominant single-family bucket here
+  # keeps fetch volume sane. Finer residential-vs-commercial classification
+  # (incl. Rehab/School edge cases) is still handled downstream by scoring.py
+  # via the same commercial_keywords/residential_keywords in scoring.yaml.
+  where_extra: "permittype <> 'One/Two Family'"
+  field_map:
+    source_record_id: permitnum
+    company_name: ownname
+    address: projadd
+    zip: zipcode
+    value_amount: bldgcost
+    permit_type: permittype
+    permit_desc: usdcdesc
+
+permit_raleigh:
+  enabled: true
+  # Confirmed live 2026-07-08: ArcGIS Online item bdfad82b15344d37beb28d7f90b6c4be
+  # ("Building Permits", owner OpenData_ral, all-time -- NOT the "Past 180
+  # Days"/"Past 31 Days" sibling items) resolves to this hosted FeatureServer.
+  layer_url: "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer/0"
+  date_field: issueddate
+  # permitclassmapped values are "Residential" / "Non-Residential" (confirmed
+  # live) -- filter fetch volume to Non-Residential.
+  where_extra: "permitclassmapped = 'Non-Residential'"
+  # "Non-Residential" literally contains the substring "residential", which
+  # would trip scoring.py's residential-keyword penalty if passed through
+  # verbatim -- translate to "Commercial" before it reaches signal_detail.
+  permit_type_labels:
+    Non-Residential: Commercial
+  field_map:
+    source_record_id: permitnum
+    company_name: contractorcompanyname   # Raleigh has a real contractor field, unlike Meck
+    address: originaladdress1
+    zip: originalzip
+    value_amount: estprojectcost
+    permit_type: permitclassmapped
+    permit_desc: workclass
+
+permit_durham:
+  enabled: true
+  # Confirmed live 2026-07-08: ArcGIS Online item f352381d9b3c4949b4aead66f6e62889
+  # ("All Building Permits", owner Open.Data_DurhamNC) -- a MapServer layer
+  # (not FeatureServer), city+county combined per the spec's own description.
+  layer_url: "https://webgis2.durhamnc.gov/server/rest/services/PublicServices/Inspections/MapServer/12"
+  date_field: ISSUE_DATE
+  # TYPE is RESI / MULTI_FAMILY / NON_RESI / MHP (confirmed live). Exclude the
+  # dominant single-family RESI bucket; keep MULTI_FAMILY (apartments/
+  # townhomes -- legitimately commercial per scoring.yaml's own
+  # commercial_keywords) and NON_RESI.
+  where_extra: "TYPE <> 'RESI'"
+  permit_type_labels:
+    NON_RESI: Commercial
+    MULTI_FAMILY: Multi-Family
+  # This layer has no address/zip field at all (only parcel IDs) and no
+  # structured contractor field (contractor/owner names only appear inline in
+  # free-text COMMENTS, e.g. "GC EMAIL ON APP IS X@Y.COM" -- too unreliable to
+  # regex-parse into a real company name, so company_name is left blank here
+  # rather than guessed). The whole feed is Durham city+county, so skip geo
+  # lookup and assign the county directly.
+  static_county: Durham
+  field_map:
+    source_record_id: PermitNum
+    value_amount: BLD_Cost
+    permit_type: TYPE
+    permit_desc: BLDB_ACTIVITY_1
+
+permit_greensboro:
+  enabled: true
+  # Confirmed live 2026-07-08: the spec's hub.arcgis.com dataset slug
+  # (greensboro::building-inspections-permits) 400'd directly -- that's a Hub
+  # site alias, not an item id. Found via arcgis.com/sharing/rest/search
+  # instead: item 7ab0dba8aaa2495c8c6b0e3a85831ca7 ("Engineering &
+  # Inspections - Building Permits", owner 14405_greensboro).
+  layer_url: "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer/2"
+  date_field: IssuedDate
+  # PermitType is a clean Commercial/Residential split (confirmed live, no
+  # substring trap this time) -- filter fetch volume to Commercial.
+  where_extra: "PermitType = 'Commercial'"
+  # City-only feed entirely within Guilford County -- no reliable project-site
+  # zip field (only OwnerMailZip, which is the owner's mailing address, not
+  # necessarily the job site), so assign the county directly like Durham.
+  static_county: Guilford
+  field_map:
+    source_record_id: PermitNum
+    company_name: Contractor
+    address: FullAddress
+    value_amount: TotalCost
+    permit_type: PermitType
+    permit_desc: ApplicationType
+
+permit_winstonsalem:
+  enabled: true
+  # Confirmed live 2026-07-08: item cb7bd1148e1f40378b2ca37406b5c0cd
+  # ("Building Permits", owner ForsythGISAdmin) -- this is the *county-wide*
+  # Forsyth feed (EnerGov extract), not Winston-Salem-only, but the whole
+  # county maps to one hub (Triad) anyway so that's not a coverage gap.
+  layer_url: "https://geo.forsythco.com/gis3/rest/services/Public_EnerGovPlans/Building_Permits/FeatureServer/0"
+  date_field: IssueDate
+  # PermitType is "Building (Commercial)" / "Building (Residential)" / "Sign
+  # Permit" / "Grading Stockpiling" / "Film Permit" (confirmed live) -- both
+  # words appear whole here, no substring trap like Raleigh/Durham's fields.
+  where_extra: "PermitType = 'Building (Commercial)'"
+  # This is the thinnest of the five feeds: no address/zip field, no
+  # contractor/owner field, and no project-value field at all (confirmed live
+  # -- EnerGov extract just doesn't expose cost data here). company_name and
+  # value_amount are left blank/null rather than guessed; icp_fit and the
+  # value-based half of residential_or_small simply won't apply to this
+  # source, which is an honest reflection of what's public, not a bug.
+  static_county: Forsyth
+  field_map:
+    source_record_id: PermitNumber
+    permit_type: PermitType
+    permit_desc: PermitClass
+
+# ---- Manual-source CSV imports (Section 0 guardrails + Phase 6) ----
+#
+# LiensNC requires an authenticated session, and county Clerk of Superior
+# Court sites / license-board lookups are UI-only portals -- none of these
+# are safe to automate (see Section 0). These three blocks are all read by
+# ONE adapter (src/adapters/csv_import.py), loaded via
+# `signals import --source <name> --file <path>`, not `pull`/`run-all`.
+#
+# No real sample export was available at build time, so column_map below
+# uses PLACEHOLDER header names -- edit them to match your actual export's
+# real column headers the same way you'd edit crm.yaml's column_map. Nothing
+# here is discovered/confirmed live like the sources above; there's no
+# "enabled" flag either, since these aren't part of the automated pull loop.
+
+liensnc:
+  file_format: csv        # csv | xlsx
+  date_format: "%m/%d/%Y"  # manual exports are rarely ISO -- adjust to match your file
+  column_map:
+    source_record_id: "Filing Number"    # <- edit to your export's real header
+    company_name: "Debtor Name"
+    signal_date: "Filing Date"
+    address: "Property Address"
+    county: "County"
+    value_amount: "Lien Amount"
+    signal_detail: "Lien Type"
+
+lien:
+  file_format: csv
+  date_format: "%m/%d/%Y"
+  column_map:
+    source_record_id: "Case Number"
+    company_name: "Debtor Name"
+    signal_date: "Filing Date"
+    address: "Property Address"
+    county: "County"
+    value_amount: "Amount"
+    signal_detail: "Claim Type"
+
+license:
+  file_format: csv
+  date_format: "%m/%d/%Y"
+  column_map:
+    source_record_id: "License Number"
+    company_name: "License Holder"
+    signal_date: "Expiration Date"
+    city: "City"
+    signal_detail: "License Status"
+    # No value_amount for a license lookup -- there's no dollar figure on a
+    # license record, same honest gap as permit_winstonsalem.

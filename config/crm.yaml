@@ -1,0 +1,47 @@
+# CRM export column mapping + match settings (Section 4a of the build spec)
+#
+# CRM-agnostic: this maps YOUR CRM export's column headers to what the tool
+# needs. Switching CRMs = edit this file, not code.
+#
+# Confirmed live 2026-07-08 against Jonathan's real HubSpot export
+# (hubspot-crm-exports-all-contacts-*.xlsx, sheet "All contacts"). Real
+# headers: Record ID, First Name, Last Name, Email, Phone Number,
+# Company Name, Lead Status, Lifecycle Stage, Buying Role, Contact owner.
+#
+# This is a per-CONTACT export (not per-company) -- multiple contacts can
+# share one Company Name (e.g. two people at "Wolfe Homes"). crm.py folds
+# these to one crm_accounts row per company_name_norm at load time.
+
+file_format: xlsx              # csv | xlsx
+
+column_map:
+  company: "Company Name"
+  status: "Lifecycle Stage"    # real values seen: Lead (164), Opportunity (1)
+  # No "Company Domain Name" column exists in a Contacts export (that's a
+  # Companies-object property) -- derive domain from Email instead, which
+  # this export does have.
+  email: "Email"
+  city: null                   # not present in this export
+
+match:
+  threshold: 88                # rapidfuzz token_sort_ratio cutoff for a name match
+  # Domain-exact matching activates automatically the moment any signal
+  # source populates a domain -- none of the 5 permit feeds + OSHA persist
+  # one today (not in the master schema, Section 4), so this branch is
+  # currently a documented no-op, not a broken feature.
+  use_domain_exact: true
+  review_band: [80, 88]        # matches in this range are flagged 'review', not suppressed
+
+# Which CRM stages count as "already handled" (i.e. actually trigger in_crm=1
+# + the already_in_crm scoring penalty) when matched. A match against a
+# status NOT in this list (e.g. a merely cold "Lead") still gets
+# crm_match_name/crm_status stamped for visibility, but is NOT suppressed --
+# surfacing a fresh compliance signal on a company Jonathan is tracking but
+# hasn't closed is exactly the compounding-signal value this tool exists for.
+#
+# Tuned to HubSpot's real lifecycle-stage vocabulary as it appears in
+# Jonathan's actual pipeline today (all "Lead" + one "Opportunity" -- no
+# "Customer" yet, but that's HubSpot's standard next stage once one lands).
+statuses_to_exclude:
+  - Opportunity
+  - Customer

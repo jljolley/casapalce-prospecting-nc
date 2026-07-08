@@ -1,0 +1,1092 @@
+zip,county,city
+27006,Davie,Advance
+27007,Surry,Ararat
+27009,Forsyth,Belews Creek
+27010,Forsyth,Bethania
+27011,Yadkin,Boonville
+27012,Forsyth,Clemmons
+27013,Rowan,Cleveland
+27014,Davie,Cooleemee
+27016,Stokes,Danbury
+27017,Surry,Dobson
+27018,Yadkin,East Bend
+27019,Stokes,Germanton
+27020,Yadkin,Hamptonville
+27021,Stokes,King
+27022,Stokes,Lawsonville
+27023,Forsyth,Lewisville
+27024,Surry,Lowgap
+27025,Rockingham,Madison
+27027,Rockingham,Mayodan
+27028,Davie,Mocksville
+27030,Surry,Mount Airy
+27031,Surry,Mount Airy
+27040,Forsyth,Pfafftown
+27041,Surry,Pilot Mountain
+27042,Stokes,Pine Hall
+27043,Stokes,Pinnacle
+27045,Forsyth,Rural Hall
+27046,Stokes,Sandy Ridge
+27047,Surry,Siloam
+27048,Rockingham,Stoneville
+27049,Surry,Toast
+27050,Forsyth,Tobaccoville
+27051,Forsyth,Walkertown
+27052,Stokes,Walnut Cove
+27053,Stokes,Westfield
+27054,Rowan,Woodleaf
+27055,Yadkin,Yadkinville
+27094,Forsyth,Rural Hall
+27098,Forsyth,Rural Hall
+27099,Forsyth,Rural Hall
+27101,Forsyth,Winston Salem
+27102,Forsyth,Winston Salem
+27103,Forsyth,Winston Salem
+27104,Forsyth,Winston Salem
+27105,Forsyth,Winston Salem
+27106,Forsyth,Winston Salem
+27107,Forsyth,Winston Salem
+27108,Forsyth,Winston Salem
+27109,Forsyth,Winston Salem
+27110,Forsyth,Winston Salem
+27111,Forsyth,Winston Salem
+27113,Forsyth,Winston Salem
+27114,Forsyth,Winston Salem
+27115,Forsyth,Winston Salem
+27116,Forsyth,Winston Salem
+27117,Forsyth,Winston Salem
+27120,Forsyth,Winston Salem
+27127,Forsyth,Winston Salem
+27130,Forsyth,Winston Salem
+27150,Forsyth,Winston Salem
+27151,Forsyth,Winston-salem
+27152,Forsyth,Winston Salem
+27155,Forsyth,Winston Salem
+27156,Forsyth,Winston-salem
+27157,Forsyth,Winston Salem
+27198,Forsyth,Winston Salem
+27199,Forsyth,Winston Salem
+27201,Alamance,Alamance
+27202,Alamance,Altamahaw
+27203,Randolph,Asheboro
+27204,Randolph,Asheboro
+27205,Randolph,Asheboro
+27207,Chatham,Bear Creek
+27208,Chatham,Bennett
+27209,Montgomery,Biscoe
+27212,Caswell,Blanch
+27213,Chatham,Bonlee
+27214,Guilford,Browns Summit
+27215,Alamance,Burlington
+27216,Alamance,Burlington
+27217,Alamance,Burlington
+27220,Alamance,Burlington
+27228,Chatham,Bynum
+27229,Montgomery,Candor
+27230,Randolph,Cedar Falls
+27231,Orange,Cedar Grove
+27233,Randolph,Climax
+27235,Guilford,Colfax
+27237,Lee,Cumnock
+27239,Davidson,Denton
+27242,Moore,Eagle Springs
+27243,Orange,Efland
+27244,Alamance,Elon
+27247,Montgomery,Ether
+27248,Randolph,Franklinville
+27249,Guilford,Gibsonville
+27252,Chatham,Goldston
+27253,Alamance,Graham
+27256,Chatham,Gulf
+27258,Alamance,Haw River
+27259,Moore,Highfalls
+27260,Guilford,High Point
+27261,Guilford,High Point
+27262,Guilford,High Point
+27263,Randolph,High Point
+27264,Guilford,High Point
+27265,Guilford,High Point
+27268,Guilford,High Point
+27278,Orange,Hillsborough
+27281,Moore,Jackson Springs
+27282,Guilford,Jamestown
+27283,Guilford,Julian
+27284,Forsyth,Kernersville
+27285,Forsyth,Kernersville
+27288,Rockingham,Eden
+27289,Rockingham,Eden
+27291,Caswell,Leasburg
+27292,Davidson,Lexington
+27293,Davidson,Lexington
+27294,Davidson,Lexington
+27295,Davidson,Lexington
+27298,Randolph,Liberty
+27299,Davidson,Linwood
+27301,Guilford,Mc Leansville
+27302,Alamance,Mebane
+27305,Caswell,Milton
+27306,Montgomery,Mount Gilead
+27310,Guilford,Oak Ridge
+27311,Caswell,Pelham
+27312,Chatham,Pittsboro
+27313,Guilford,Pleasant Garden
+27314,Caswell,Prospect Hill
+27315,Caswell,Providence
+27316,Randolph,Ramseur
+27317,Randolph,Randleman
+27320,Rockingham,Reidsville
+27321,Rockingham,Reidsville
+27322,Rockingham,Reidsville
+27323,Rockingham,Reidsville
+27325,Moore,Robbins
+27326,Rockingham,Ruffin
+27330,Lee,Sanford
+27331,Lee,Sanford
+27332,Lee,Sanford
+27340,Alamance,Saxapahaw
+27341,Randolph,Seagrove
+27342,Guilford,Sedalia
+27343,Person,Semora
+27344,Chatham,Siler City
+27349,Alamance,Snow Camp
+27350,Randolph,Sophia
+27351,Davidson,Southmont
+27355,Randolph,Staley
+27356,Montgomery,Star
+27357,Rockingham,Stokesdale
+27358,Guilford,Summerfield
+27359,Alamance,Swepsonville
+27360,Davidson,Thomasville
+27361,Davidson,Thomasville
+27370,Randolph,Trinity
+27371,Montgomery,Troy
+27373,Davidson,Wallburg
+27374,Davidson,Welcome
+27375,Rockingham,Wentworth
+27376,Moore,West End
+27377,Guilford,Whitsett
+27379,Caswell,Yanceyville
+27395,Guilford,Greensboro
+27401,Guilford,Greensboro
+27402,Guilford,Greensboro
+27403,Guilford,Greensboro
+27404,Guilford,Greensboro
+27405,Guilford,Greensboro
+27406,Guilford,Greensboro
+27407,Guilford,Greensboro
+27408,Guilford,Greensboro
+27409,Guilford,Greensboro
+27410,Guilford,Greensboro
+27411,Guilford,Greensboro
+27412,Guilford,Greensboro
+27413,Guilford,Greensboro
+27415,Guilford,Greensboro
+27416,Guilford,Greensboro
+27417,Guilford,Greensboro
+27419,Guilford,Greensboro
+27420,Guilford,Greensboro
+27425,Guilford,Greensboro
+27427,Guilford,Greensboro
+27429,Guilford,Greensboro
+27435,Guilford,Greensboro
+27438,Guilford,Greensboro
+27455,Guilford,Greensboro
+27480,Guilford,Greensboro
+27495,Guilford,Greensboro
+27497,Guilford,Greensboro
+27498,Guilford,Greensboro
+27499,Guilford,Greensboro
+27501,Harnett,Angier
+27502,Wake,Apex
+27503,Durham,Bahama
+27504,Johnston,Benson
+27505,Harnett,Broadway
+27506,Harnett,Buies Creek
+27507,Granville,Bullock
+27508,Franklin,Bunn
+27509,Granville,Butner
+27510,Orange,Carrboro
+27511,Wake,Cary
+27512,Wake,Cary
+27513,Wake,Cary
+27514,Orange,Chapel Hill
+27515,Orange,Chapel Hill
+27516,Orange,Chapel Hill
+27517,Orange,Chapel Hill
+27518,Wake,Cary
+27519,Wake,Cary
+27520,Johnston,Clayton
+27521,Harnett,Coats
+27522,Granville,Creedmoor
+27523,Wake,Apex
+27524,Johnston,Four Oaks
+27525,Franklin,Franklinton
+27526,Wake,Fuquay Varina
+27527,Johnston,Clayton
+27528,Johnston,Clayton
+27529,Wake,Garner
+27530,Wayne,Goldsboro
+27531,Wayne,Goldsboro
+27532,Wayne,Goldsboro
+27533,Wayne,Goldsboro
+27534,Wayne,Goldsboro
+27536,Vance,Henderson
+27537,Vance,Henderson
+27539,Wake,Apex
+27540,Wake,Holly Springs
+27541,Person,Hurdle Mills
+27542,Johnston,Kenly
+27543,Harnett,Kipling
+27544,Vance,Kittrell
+27545,Wake,Knightdale
+27546,Harnett,Lillington
+27549,Franklin,Louisburg
+27551,Warren,Macon
+27552,Harnett,Mamers
+27553,Warren,Manson
+27555,Johnston,Micro
+27556,Vance,Middleburg
+27557,Nash,Middlesex
+27559,Chatham,Moncure
+27560,Wake,Morrisville
+27562,Wake,New Hill
+27563,Warren,Norlina
+27564,Granville,Creedmoor
+27565,Granville,Oxford
+27568,Johnston,Pine Level
+27569,Johnston,Princeton
+27570,Warren,Ridgeway
+27571,Wake,Rolesville
+27572,Person,Rougemont
+27573,Person,Roxboro
+27574,Person,Roxboro
+27576,Johnston,Selma
+27577,Johnston,Smithfield
+27581,Granville,Stem
+27582,Granville,Stovall
+27583,Person,Timberlake
+27584,Vance,Townsville
+27586,Warren,Vaughan
+27587,Wake,Wake Forest
+27588,Wake,Wake Forest
+27589,Warren,Warrenton
+27591,Wake,Wendell
+27592,Wake,Willow Spring
+27593,Johnston,Wilsons Mills
+27594,Warren,Wise
+27596,Franklin,Youngsville
+27597,Wake,Zebulon
+27599,Orange,Chapel Hill
+27601,Wake,Raleigh
+27602,Wake,Raleigh
+27603,Wake,Raleigh
+27604,Wake,Raleigh
+27605,Wake,Raleigh
+27606,Wake,Raleigh
+27607,Wake,Raleigh
+27608,Wake,Raleigh
+27609,Wake,Raleigh
+27610,Wake,Raleigh
+27611,Wake,Raleigh
+27612,Wake,Raleigh
+27613,Wake,Raleigh
+27614,Wake,Raleigh
+27615,Wake,Raleigh
+27616,Wake,Raleigh
+27617,Wake,Raleigh
+27619,Wake,Raleigh
+27620,Wake,Raleigh
+27621,Wake,Raleigh
+27622,Wake,Raleigh
+27623,Wake,Raleigh
+27624,Wake,Raleigh
+27625,Wake,Raleigh
+27626,Wake,Raleigh
+27627,Wake,Raleigh
+27628,Wake,Raleigh
+27629,Wake,Raleigh
+27634,Wake,Raleigh
+27635,Wake,Raleigh
+27636,Wake,Raleigh
+27640,Wake,Raleigh
+27650,Wake,Raleigh
+27656,Wake,Raleigh
+27658,Wake,Raleigh
+27661,Wake,Raleigh
+27668,Wake,Raleigh
+27675,Wake,Raleigh
+27676,Wake,Raleigh
+27690,Wake,Raleigh
+27695,Wake,Raleigh
+27697,Wake,Raleigh
+27698,Wake,Raleigh
+27699,Wake,Raleigh
+27701,Durham,Durham
+27702,Durham,Durham
+27703,Durham,Durham
+27704,Durham,Durham
+27705,Durham,Durham
+27706,Durham,Durham
+27707,Durham,Durham
+27708,Durham,Durham
+27709,Durham,Durham
+27710,Durham,Durham
+27711,Durham,Durham
+27712,Durham,Durham
+27713,Durham,Durham
+27715,Durham,Durham
+27717,Durham,Durham
+27722,Durham,Durham
+27801,Edgecombe,Rocky Mount
+27802,Nash,Rocky Mount
+27803,Nash,Rocky Mount
+27804,Nash,Rocky Mount
+27805,Bertie,Aulander
+27806,Beaufort,Aurora
+27807,Nash,Bailey
+27808,Beaufort,Bath
+27809,Nash,Battleboro
+27810,Beaufort,Belhaven
+27811,Pitt,Bellarthur
+27812,Pitt,Bethel
+27813,Wilson,Black Creek
+27814,Beaufort,Blounts Creek
+27815,Edgecombe,Rocky Mount
+27816,Nash,Castalia
+27817,Beaufort,Chocowinity
+27818,Hertford,Como
+27819,Edgecombe,Conetoe
+27820,Northampton,Conway
+27821,Beaufort,Edward
+27822,Wilson,Elm City
+27823,Halifax,Enfield
+27824,Hyde,Engelhard
+27825,Martin,Everetts
+27826,Hyde,Fairfield
+27827,Pitt,Falkland
+27828,Pitt,Farmville
+27829,Pitt,Fountain
+27830,Wayne,Fremont
+27831,Northampton,Garysburg
+27832,Northampton,Gaston
+27833,Pitt,Greenville
+27834,Pitt,Greenville
+27835,Pitt,Greenville
+27836,Pitt,Greenville
+27837,Pitt,Grimesland
+27839,Halifax,Halifax
+27840,Martin,Hamilton
+27841,Martin,Hassell
+27842,Northampton,Henrico
+27843,Halifax,Hobgood
+27844,Halifax,Hollister
+27845,Northampton,Jackson
+27846,Martin,Jamesville
+27847,Bertie,Kelford
+27849,Bertie,Lewiston Woodville
+27850,Halifax,Littleton
+27851,Wilson,Lucama
+27852,Edgecombe,Macclesfield
+27853,Northampton,Margarettsville
+27854,Northampton,Milwaukee
+27855,Hertford,Murfreesboro
+27856,Nash,Nashville
+27857,Martin,Oak City
+27858,Pitt,Greenville
+27860,Beaufort,Pantego
+27861,Martin,Parmele
+27862,Northampton,Pendleton
+27863,Wayne,Pikeville
+27864,Edgecombe,Pinetops
+27865,Beaufort,Pinetown
+27866,Northampton,Pleasant Hill
+27867,Northampton,Potecasi
+27868,Nash,Red Oak
+27869,Northampton,Rich Square
+27870,Halifax,Roanoke Rapids
+27871,Martin,Robersonville
+27872,Bertie,Roxobel
+27873,Wilson,Saratoga
+27874,Halifax,Scotland Neck
+27875,Hyde,Scranton
+27876,Northampton,Seaboard
+27877,Northampton,Severn
+27878,Nash,Sharpsburg
+27879,Pitt,Simpson
+27880,Wilson,Sims
+27881,Edgecombe,Speed
+27882,Nash,Spring Hope
+27883,Wilson,Stantonsburg
+27884,Pitt,Stokes
+27885,Hyde,Swanquarter
+27886,Edgecombe,Tarboro
+27887,Halifax,Tillery
+27888,Greene,Walstonburg
+27889,Beaufort,Washington
+27890,Halifax,Weldon
+27891,Nash,Whitakers
+27892,Martin,Williamston
+27893,Wilson,Wilson
+27894,Wilson,Wilson
+27895,Wilson,Wilson
+27896,Wilson,Wilson
+27897,Northampton,Woodland
+27906,Pasquotank,Elizabeth City
+27907,Pasquotank,Elizabeth City
+27909,Pasquotank,Elizabeth City
+27910,Hertford,Ahoskie
+27915,Dare,Avon
+27916,Currituck,Aydlett
+27917,Currituck,Barco
+27919,Perquimans,Belvidere
+27920,Dare,Buxton
+27921,Camden,Camden
+27922,Hertford,Cofield
+27923,Currituck,Coinjock
+27924,Bertie,Colerain
+27925,Tyrrell,Columbia
+27926,Gates,Corapeake
+27927,Currituck,Corolla
+27928,Washington,Creswell
+27929,Currituck,Currituck
+27930,Perquimans,Hertford
+27932,Chowan,Edenton
+27935,Gates,Eure
+27936,Dare,Frisco
+27937,Gates,Gates
+27938,Gates,Gatesville
+27939,Currituck,Grandy
+27941,Currituck,Harbinger
+27942,Hertford,Harrellsville
+27943,Dare,Hatteras
+27944,Perquimans,Hertford
+27946,Gates,Hobbsville
+27947,Currituck,Jarvisburg
+27948,Dare,Kill Devil Hills
+27949,Dare,Kitty Hawk
+27950,Currituck,Knotts Island
+27953,Dare,Manns Harbor
+27954,Dare,Manteo
+27956,Currituck,Maple
+27957,Bertie,Merry Hill
+27958,Currituck,Moyock
+27959,Dare,Nags Head
+27960,Hyde,Ocracoke
+27962,Washington,Plymouth
+27964,Currituck,Point Harbor
+27965,Currituck,Poplar Branch
+27966,Currituck,Powells Point
+27967,Bertie,Powellsville
+27968,Dare,Rodanthe
+27969,Gates,Roduco
+27970,Washington,Roper
+27972,Dare,Salvo
+27973,Currituck,Shawboro
+27974,Camden,Shiloh
+27976,Camden,South Mills
+27978,Dare,Stumpy Point
+27979,Gates,Sunbury
+27980,Chowan,Tyner
+27981,Dare,Wanchese
+27982,Dare,Waves
+27983,Bertie,Windsor
+27985,Perquimans,Winfall
+27986,Hertford,Winton
+28001,Stanly,Albemarle
+28002,Stanly,Albemarle
+28006,Gaston,Alexis
+28007,Anson,Ansonville
+28009,Stanly,Badin
+28010,Iredell,Barium Springs
+28012,Gaston,Belmont
+28016,Gaston,Bessemer City
+28017,Cleveland,Boiling Springs
+28018,Rutherford,Bostic
+28019,Rutherford,Caroleen
+28020,Cleveland,Casar
+28021,Gaston,Cherryville
+28023,Rowan,China Grove
+28024,Rutherford,Cliffside
+28025,Cabarrus,Concord
+28026,Cabarrus,Concord
+28027,Cabarrus,Concord
+28031,Mecklenburg,Cornelius
+28032,Gaston,Cramerton
+28033,Lincoln,Crouse
+28034,Gaston,Dallas
+28035,Mecklenburg,Davidson
+28036,Mecklenburg,Davidson
+28037,Lincoln,Denver
+28038,Cleveland,Earl
+28039,Rowan,East Spencer
+28040,Rutherford,Ellenboro
+28041,Rowan,Faith
+28042,Cleveland,Fallston
+28043,Rutherford,Forest City
+28052,Gaston,Gastonia
+28053,Gaston,Gastonia
+28054,Gaston,Gastonia
+28055,Gaston,Gastonia
+28056,Gaston,Gastonia
+28070,Mecklenburg,Huntersville
+28071,Rowan,Gold Hill
+28072,Rowan,Granite Quarry
+28073,Cleveland,Grover
+28074,Rutherford,Harris
+28075,Cabarrus,Harrisburg
+28076,Rutherford,Henrietta
+28077,Gaston,High Shoals
+28078,Mecklenburg,Huntersville
+28079,Union,Indian Trail
+28080,Lincoln,Iron Station
+28081,Cabarrus,Kannapolis
+28082,Cabarrus,Kannapolis
+28083,Cabarrus,Kannapolis
+28086,Cleveland,Kings Mountain
+28088,Rowan,Landis
+28089,Cleveland,Lattimore
+28090,Cleveland,Lawndale
+28091,Anson,Lilesville
+28092,Lincoln,Lincolnton
+28093,Lincoln,Lincolnton
+28097,Stanly,Locust
+28098,Gaston,Lowell
+28101,Gaston,Mc Adenville
+28102,Anson,Mc Farlan
+28103,Union,Marshville
+28104,Union,Matthews
+28105,Mecklenburg,Matthews
+28106,Mecklenburg,Matthews
+28107,Cabarrus,Midland
+28108,Union,Mineral Springs
+28109,Stanly,Misenheimer
+28110,Union,Monroe
+28111,Union,Monroe
+28112,Union,Monroe
+28114,Rutherford,Mooresboro
+28115,Iredell,Mooresville
+28117,Iredell,Mooresville
+28119,Anson,Morven
+28120,Gaston,Mount Holly
+28123,Iredell,Mount Mourne
+28124,Cabarrus,Mount Pleasant
+28125,Rowan,Mount Ulla
+28126,Mecklenburg,Newell
+28127,Stanly,New London
+28128,Stanly,Norwood
+28129,Stanly,Oakboro
+28130,Mecklenburg,Paw Creek
+28133,Anson,Peachland
+28134,Mecklenburg,Pineville
+28135,Anson,Polkton
+28136,Cleveland,Polkville
+28137,Stanly,Richfield
+28138,Rowan,Rockwell
+28139,Rutherford,Rutherfordton
+28144,Rowan,Salisbury
+28145,Rowan,Salisbury
+28146,Rowan,Salisbury
+28147,Rowan,Salisbury
+28150,Cleveland,Shelby
+28151,Cleveland,Shelby
+28152,Cleveland,Shelby
+28159,Rowan,Spencer
+28160,Rutherford,Spindale
+28163,Stanly,Stanfield
+28164,Gaston,Stanley
+28166,Iredell,Troutman
+28167,Rutherford,Union Mills
+28168,Lincoln,Vale
+28169,Cleveland,Waco
+28170,Anson,Wadesboro
+28173,Union,Waxhaw
+28174,Union,Wingate
+28201,Mecklenburg,Charlotte
+28202,Mecklenburg,Charlotte
+28203,Mecklenburg,Charlotte
+28204,Mecklenburg,Charlotte
+28205,Mecklenburg,Charlotte
+28206,Mecklenburg,Charlotte
+28207,Mecklenburg,Charlotte
+28208,Mecklenburg,Charlotte
+28209,Mecklenburg,Charlotte
+28210,Mecklenburg,Charlotte
+28211,Mecklenburg,Charlotte
+28212,Mecklenburg,Charlotte
+28213,Mecklenburg,Charlotte
+28214,Mecklenburg,Charlotte
+28215,Mecklenburg,Charlotte
+28216,Mecklenburg,Charlotte
+28217,Mecklenburg,Charlotte
+28218,Mecklenburg,Charlotte
+28219,Mecklenburg,Charlotte
+28220,Mecklenburg,Charlotte
+28221,Mecklenburg,Charlotte
+28222,Mecklenburg,Charlotte
+28223,Mecklenburg,Charlotte
+28224,Mecklenburg,Charlotte
+28226,Mecklenburg,Charlotte
+28227,Mecklenburg,Charlotte
+28228,Mecklenburg,Charlotte
+28229,Mecklenburg,Charlotte
+28230,Mecklenburg,Charlotte
+28231,Mecklenburg,Charlotte
+28232,Mecklenburg,Charlotte
+28233,Mecklenburg,Charlotte
+28234,Mecklenburg,Charlotte
+28235,Mecklenburg,Charlotte
+28236,Mecklenburg,Charlotte
+28237,Mecklenburg,Charlotte
+28241,Mecklenburg,Charlotte
+28242,Mecklenburg,Charlotte
+28243,Mecklenburg,Charlotte
+28244,Mecklenburg,Charlotte
+28246,Mecklenburg,Charlotte
+28247,Mecklenburg,Charlotte
+28250,Mecklenburg,Charlotte
+28253,Mecklenburg,Charlotte
+28254,Mecklenburg,Charlotte
+28255,Mecklenburg,Charlotte
+28256,Mecklenburg,Charlotte
+28258,Mecklenburg,Charlotte
+28260,Mecklenburg,Charlotte
+28262,Mecklenburg,Charlotte
+28263,Mecklenburg,Charlotte
+28265,Mecklenburg,Charlotte
+28266,Mecklenburg,Charlotte
+28269,Mecklenburg,Charlotte
+28270,Mecklenburg,Charlotte
+28271,Mecklenburg,Charlotte
+28272,Mecklenburg,Charlotte
+28273,Mecklenburg,Charlotte
+28274,Mecklenburg,Charlotte
+28275,Mecklenburg,Charlotte
+28277,Mecklenburg,Charlotte
+28278,Mecklenburg,Charlotte
+28280,Mecklenburg,Charlotte
+28281,Mecklenburg,Charlotte
+28282,Mecklenburg,Charlotte
+28284,Mecklenburg,Charlotte
+28285,Mecklenburg,Charlotte
+28287,Mecklenburg,Charlotte
+28288,Mecklenburg,Charlotte
+28289,Mecklenburg,Charlotte
+28290,Mecklenburg,Charlotte
+28296,Mecklenburg,Charlotte
+28297,Mecklenburg,Charlotte
+28299,Mecklenburg,Charlotte
+28301,Cumberland,Fayetteville
+28302,Cumberland,Fayetteville
+28303,Cumberland,Fayetteville
+28304,Cumberland,Fayetteville
+28305,Cumberland,Fayetteville
+28306,Cumberland,Fayetteville
+28307,Cumberland,Fort Bragg
+28308,Cumberland,Pope Army Airfield
+28309,Cumberland,Fayetteville
+28310,Cumberland,Fort Bragg
+28311,Cumberland,Fayetteville
+28312,Cumberland,Fayetteville
+28314,Cumberland,Fayetteville
+28315,Moore,Aberdeen
+28318,Sampson,Autryville
+28319,Robeson,Barnesville
+28320,Bladen,Bladenboro
+28323,Harnett,Bunnlevel
+28325,Duplin,Calypso
+28326,Harnett,Cameron
+28327,Moore,Carthage
+28328,Sampson,Clinton
+28329,Sampson,Clinton
+28330,Richmond,Cordova
+28331,Cumberland,Cumberland
+28332,Bladen,Dublin
+28333,Wayne,Dudley
+28334,Harnett,Dunn
+28335,Harnett,Dunn
+28337,Bladen,Elizabethtown
+28338,Richmond,Ellerbe
+28339,Harnett,Erwin
+28340,Robeson,Fairmont
+28341,Duplin,Faison
+28342,Cumberland,Falcon
+28343,Scotland,Gibson
+28344,Sampson,Godwin
+28345,Richmond,Hamlet
+28347,Richmond,Hoffman
+28348,Cumberland,Hope Mills
+28349,Duplin,Kenansville
+28350,Moore,Lakeview
+28351,Scotland,Laurel Hill
+28352,Scotland,Laurinburg
+28353,Scotland,Laurinburg
+28355,Lee,Lemon Springs
+28356,Cumberland,Linden
+28357,Robeson,Lumber Bridge
+28358,Robeson,Lumberton
+28359,Robeson,Lumberton
+28360,Robeson,Lumberton
+28362,Robeson,Marietta
+28363,Scotland,Marston
+28364,Robeson,Maxton
+28365,Wayne,Mount Olive
+28366,Sampson,Newton Grove
+28367,Richmond,Norman
+28368,Harnett,Olivia
+28369,Robeson,Orrum
+28370,Moore,Pinehurst
+28371,Cumberland,Parkton
+28372,Robeson,Pembroke
+28373,Moore,Pinebluff
+28374,Moore,Pinehurst
+28375,Robeson,Proctorville
+28376,Hoke,Raeford
+28377,Robeson,Red Springs
+28378,Robeson,Rex
+28379,Richmond,Rockingham
+28380,Richmond,Rockingham
+28382,Sampson,Roseboro
+28383,Robeson,Rowland
+28384,Robeson,Saint Pauls
+28385,Sampson,Salemburg
+28386,Robeson,Shannon
+28387,Moore,Southern Pines
+28388,Moore,Southern Pines
+28390,Harnett,Spring Lake
+28391,Cumberland,Stedman
+28392,Bladen,Tar Heel
+28393,Sampson,Turkey
+28394,Moore,Vass
+28395,Cumberland,Wade
+28396,Scotland,Wagram
+28398,Duplin,Warsaw
+28399,Bladen,White Oak
+28401,New Hanover,Wilmington
+28402,New Hanover,Wilmington
+28403,New Hanover,Wilmington
+28404,New Hanover,Wilmington
+28405,New Hanover,Wilmington
+28406,New Hanover,Wilmington
+28407,New Hanover,Wilmington
+28408,New Hanover,Wilmington
+28409,New Hanover,Wilmington
+28410,New Hanover,Wilmington
+28411,New Hanover,Wilmington
+28412,New Hanover,Wilmington
+28420,Brunswick,Ash
+28421,Pender,Atkinson
+28422,Brunswick,Bolivia
+28423,Columbus,Bolton
+28424,Columbus,Brunswick
+28425,Pender,Burgaw
+28428,New Hanover,Carolina Beach
+28429,New Hanover,Castle Hayne
+28430,Columbus,Cerro Gordo
+28431,Columbus,Chadbourn
+28432,Columbus,Clarendon
+28433,Bladen,Clarkton
+28434,Bladen,Council
+28435,Pender,Currie
+28436,Columbus,Delco
+28438,Columbus,Evergreen
+28439,Columbus,Fair Bluff
+28441,Sampson,Garland
+28442,Columbus,Hallsboro
+28443,Pender,Hampstead
+28444,Sampson,Harrells
+28445,Onslow,Holly Ridge
+28447,Sampson,Ivanhoe
+28448,Bladen,Kelly
+28449,New Hanover,Kure Beach
+28450,Columbus,Lake Waccamaw
+28451,Brunswick,Leland
+28452,Brunswick,Longwood
+28453,Duplin,Magnolia
+28454,Onslow,Maple Hill
+28455,Columbus,Nakina
+28456,Columbus,Riegelwood
+28457,Pender,Rocky Point
+28458,Duplin,Rose Hill
+28459,Brunswick,Shallotte
+28460,Onslow,Sneads Ferry
+28461,Brunswick,Southport
+28462,Brunswick,Supply
+28463,Columbus,Tabor City
+28464,Duplin,Teachey
+28465,Brunswick,Oak Island
+28466,Duplin,Wallace
+28467,Brunswick,Calabash
+28468,Brunswick,Sunset Beach
+28469,Brunswick,Ocean Isle Beach
+28470,Brunswick,Shallotte
+28472,Columbus,Whiteville
+28478,Pender,Willard
+28479,Brunswick,Winnabow
+28480,New Hanover,Wrightsville Beach
+28501,Lenoir,Kinston
+28502,Lenoir,Kinston
+28503,Lenoir,Kinston
+28504,Lenoir,Kinston
+28508,Duplin,Albertson
+28509,Pamlico,Alliance
+28510,Pamlico,Arapahoe
+28511,Carteret,Atlantic
+28512,Carteret,Atlantic Beach
+28513,Pitt,Ayden
+28515,Pamlico,Bayboro
+28516,Carteret,Beaufort
+28518,Duplin,Beulaville
+28519,Craven,Bridgeton
+28520,Carteret,Cedar Island
+28521,Duplin,Chinquapin
+28522,Jones,Comfort
+28523,Craven,Cove City
+28524,Carteret,Davis
+28525,Lenoir,Deep Run
+28526,Craven,Dover
+28527,Craven,Ernul
+28528,Carteret,Gloucester
+28529,Pamlico,Grantsboro
+28530,Pitt,Grifton
+28531,Carteret,Harkers Island
+28532,Craven,Havelock
+28533,Craven,Cherry Point
+28537,Pamlico,Hobucken
+28538,Greene,Hookerton
+28539,Onslow,Hubert
+28540,Onslow,Jacksonville
+28541,Onslow,Jacksonville
+28542,Onslow,Camp Lejeune
+28543,Onslow,Tarawa Terrace
+28544,Onslow,Midway Park
+28545,Onslow,Mccutcheon Field
+28546,Onslow,Jacksonville
+28547,Onslow,Camp Lejeune
+28551,Lenoir,La Grange
+28552,Pamlico,Lowland
+28553,Carteret,Marshallberg
+28554,Greene,Maury
+28555,Onslow,Maysville
+28556,Pamlico,Merritt
+28557,Carteret,Morehead City
+28560,Craven,New Bern
+28561,Craven,New Bern
+28562,Craven,New Bern
+28563,Craven,New Bern
+28564,Craven,New Bern
+28570,Carteret,Newport
+28571,Pamlico,Oriental
+28572,Duplin,Pink Hill
+28573,Jones,Pollocksville
+28574,Onslow,Richlands
+28575,Carteret,Salter Path
+28577,Carteret,Sealevel
+28578,Wayne,Seven Springs
+28579,Carteret,Smyrna
+28580,Greene,Snow Hill
+28581,Carteret,Stacy
+28582,Carteret,Stella
+28583,Pamlico,Stonewall
+28584,Carteret,Swansboro
+28585,Jones,Trenton
+28586,Craven,Vanceboro
+28587,Pamlico,Vandemere
+28589,Carteret,Williston
+28590,Pitt,Winterville
+28594,Carteret,Emerald Isle
+28601,Catawba,Hickory
+28602,Catawba,Hickory
+28603,Catawba,Hickory
+28604,Watauga,Banner Elk
+28605,Watauga,Blowing Rock
+28606,Wilkes,Boomer
+28607,Watauga,Boone
+28608,Watauga,Boone
+28609,Catawba,Catawba
+28610,Catawba,Claremont
+28611,Caldwell,Collettsville
+28612,Burke,Connelly Springs
+28613,Catawba,Conover
+28615,Ashe,Creston
+28616,Avery,Crossnore
+28617,Ashe,Crumpler
+28618,Watauga,Deep Gap
+28619,Burke,Drexel
+28621,Surry,Elkin
+28622,Avery,Elk Park
+28623,Alleghany,Ennice
+28624,Wilkes,Ferguson
+28625,Iredell,Statesville
+28626,Ashe,Fleetwood
+28627,Alleghany,Glade Valley
+28628,Burke,Glen Alpine
+28629,Ashe,Glendale Springs
+28630,Caldwell,Granite Falls
+28631,Ashe,Grassy Creek
+28633,Caldwell,Lenoir
+28634,Iredell,Harmony
+28635,Wilkes,Hays
+28636,Alexander,Hiddenite
+28637,Burke,Hildebran
+28638,Caldwell,Hudson
+28640,Ashe,Jefferson
+28641,Burke,Jonas Ridge
+28642,Yadkin,Jonesville
+28643,Ashe,Lansing
+28644,Ashe,Laurel Springs
+28645,Caldwell,Lenoir
+28646,Avery,Linville
+28647,Avery,Linville Falls
+28649,Wilkes,Mc Grady
+28650,Catawba,Maiden
+28651,Wilkes,Millers Creek
+28652,Avery,Minneapolis
+28653,Avery,Montezuma
+28654,Wilkes,Moravian Falls
+28655,Burke,Morganton
+28656,Wilkes,North Wilkesboro
+28657,Avery,Newland
+28658,Catawba,Newton
+28659,Wilkes,North Wilkesboro
+28660,Iredell,Olin
+28661,Caldwell,Patterson
+28662,Avery,Pineola
+28663,Alleghany,Piney Creek
+28664,Avery,Plumtree
+28665,Wilkes,Purlear
+28666,Burke,Icard
+28667,Caldwell,Rhodhiss
+28668,Alleghany,Roaring Gap
+28669,Wilkes,Roaring River
+28670,Wilkes,Ronda
+28671,Burke,Rutherford College
+28672,Ashe,Scottville
+28673,Catawba,Sherrills Ford
+28674,Wilkes,North Wilkesboro
+28675,Alleghany,Sparta
+28676,Surry,State Road
+28677,Iredell,Statesville
+28678,Alexander,Stony Point
+28679,Watauga,Sugar Grove
+28680,Burke,Morganton
+28681,Alexander,Taylorsville
+28682,Catawba,Terrell
+28683,Surry,Thurmond
+28684,Ashe,Todd
+28685,Wilkes,Traphill
+28687,Iredell,Statesville
+28688,Iredell,Turnersburg
+28689,Iredell,Union Grove
+28690,Burke,Valdese
+28691,Watauga,Valle Crucis
+28692,Watauga,Vilas
+28693,Ashe,Warrensville
+28694,Ashe,West Jefferson
+28697,Wilkes,Wilkesboro
+28698,Watauga,Zionville
+28699,Alexander,Scotts
+28701,Buncombe,Alexander
+28702,Graham,Almond
+28704,Buncombe,Arden
+28705,Mitchell,Bakersville
+28707,Jackson,Balsam
+28708,Transylvania,Balsam Grove
+28709,Buncombe,Barnardsville
+28710,Henderson,Bat Cave
+28711,Buncombe,Black Mountain
+28712,Transylvania,Brevard
+28713,Swain,Bryson City
+28714,Yancey,Burnsville
+28715,Buncombe,Candler
+28716,Haywood,Canton
+28717,Jackson,Cashiers
+28718,Transylvania,Cedar Mountain
+28719,Swain,Cherokee
+28720,Rutherford,Chimney Rock
+28721,Haywood,Clyde
+28722,Polk,Columbus
+28723,Jackson,Cullowhee
+28724,Henderson,Dana
+28725,Jackson,Dillsboro
+28726,Henderson,East Flat Rock
+28727,Henderson,Edneyville
+28728,Buncombe,Enka
+28729,Henderson,Etowah
+28730,Buncombe,Fairview
+28731,Henderson,Flat Rock
+28732,Henderson,Fletcher
+28733,Graham,Fontana Dam
+28734,Macon,Franklin
+28735,Henderson,Gerton
+28736,Jackson,Glenville
+28737,McDowell,Glenwood
+28738,Haywood,Hazelwood
+28739,Henderson,Hendersonville
+28740,Yancey,Green Mountain
+28741,Macon,Highlands
+28742,Henderson,Horse Shoe
+28743,Madison,Hot Springs
+28744,Macon,Franklin
+28745,Haywood,Lake Junaluska
+28746,Rutherford,Lake Lure
+28747,Transylvania,Lake Toxaway
+28748,Buncombe,Leicester
+28749,McDowell,Little Switzerland
+28750,Polk,Lynn
+28751,Haywood,Maggie Valley
+28752,McDowell,Marion
+28753,Madison,Marshall
+28754,Madison,Mars Hill
+28755,Yancey,Micaville
+28756,Polk,Mill Spring
+28757,Buncombe,Montreat
+28758,Henderson,Mountain Home
+28759,Henderson,Mills River
+28760,Henderson,Naples
+28761,McDowell,Nebo
+28762,McDowell,Old Fort
+28763,Macon,Otto
+28765,Mitchell,Penland
+28766,Transylvania,Penrose
+28768,Transylvania,Pisgah Forest
+28770,Buncombe,Ridgecrest
+28771,Graham,Robbinsville
+28772,Transylvania,Rosman
+28773,Polk,Saluda
+28774,Jackson,Sapphire
+28775,Macon,Scaly Mountain
+28776,Buncombe,Skyland
+28777,Mitchell,Spruce Pine
+28778,Buncombe,Swannanoa
+28779,Jackson,Sylva
+28781,Macon,Topton
+28782,Polk,Tryon
+28783,Jackson,Tuckasegee
+28784,Henderson,Tuxedo
+28785,Haywood,Waynesville
+28786,Haywood,Waynesville
+28787,Buncombe,Weaverville
+28788,Jackson,Webster
+28789,Jackson,Whittier
+28790,Henderson,Zirconia
+28791,Henderson,Hendersonville
+28792,Henderson,Hendersonville
+28793,Henderson,Hendersonville
+28801,Buncombe,Asheville
+28802,Buncombe,Asheville
+28803,Buncombe,Asheville
+28804,Buncombe,Asheville
+28805,Buncombe,Asheville
+28806,Buncombe,Asheville
+28810,Buncombe,Asheville
+28813,Buncombe,Asheville
+28814,Buncombe,Asheville
+28815,Buncombe,Asheville
+28816,Buncombe,Asheville
+28901,Cherokee,Andrews
+28902,Clay,Brasstown
+28903,Cherokee,Culberson
+28904,Clay,Hayesville
+28905,Cherokee,Marble
+28906,Cherokee,Murphy
+28909,Clay,Warne

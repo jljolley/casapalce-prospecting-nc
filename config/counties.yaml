@@ -1,0 +1,135 @@
+# NC county -> hub mapping  (Section 5 of the build spec)
+#
+# Format: hub -> [counties].  geo.py inverts this to county -> hub at load time.
+# County names must match config/nc_zip_county.csv exactly (no " County" suffix).
+#
+# Triangle and Triad are the FOCUS markets — they get the +15 focus_hub scoring
+# modifier (see scoring.yaml -> modifiers.focus_hub). Charlotte Metro is the
+# largest commercial market and has the best open-data coverage, but is not a
+# focus market per current GTM. All other counties are grouped into regional
+# hubs so nothing meaningful falls silently to "Other".
+#
+# Editing: move a county between hubs freely; add new hubs as needed. If you
+# want to add a hub to the focus set, also add it to scoring.yaml -> focus_hubs.
+
+# ---- FOCUS MARKETS ----
+Triangle:
+  - Wake
+  - Durham
+  - Orange
+  - Johnston
+  - Chatham
+  - Franklin
+  - Granville
+  - Person
+  - Lee
+  - Harnett
+
+Triad:
+  - Guilford
+  - Forsyth
+  - Alamance
+  - Davidson
+  - Randolph
+  - Rockingham
+  - Surry
+  - Stokes
+  - Yadkin
+  - Davie
+  - Caswell
+
+# ---- OTHER COMMERCIAL HUBS (not focus markets) ----
+Charlotte Metro:
+  - Mecklenburg
+  - Union
+  - Cabarrus
+  - Gaston
+  - Iredell
+  - Lincoln
+  - Rowan
+  - Stanly
+  - Anson
+
+Coastal:
+  - New Hanover
+  - Brunswick
+  - Onslow
+  - Pender
+  - Carteret
+  - Craven
+  - Pamlico
+  - Jones
+
+Western:
+  - Buncombe
+  - Henderson
+  - Haywood
+  - Transylvania
+  - Madison
+  - Polk
+  - Rutherford
+  - Jackson
+  - Macon
+  - Swain
+  - Cherokee
+  - Clay
+  - Graham
+  - Yancey
+  - Mitchell
+  - Avery
+  - McDowell
+
+Foothills:
+  - Catawba
+  - Burke
+  - Caldwell
+  - Alexander
+  - Wilkes
+  - Watauga
+  - Ashe
+  - Alleghany
+  - Cleveland
+
+Sandhills:
+  - Cumberland
+  - Moore
+  - Hoke
+  - Richmond
+  - Scotland
+  - Montgomery
+  - Robeson
+  - Bladen
+
+Eastern:
+  - Pitt
+  - Wayne
+  - Wilson
+  - Nash
+  - Edgecombe
+  - Lenoir
+  - Greene
+  - Sampson
+  - Duplin
+  - Beaufort
+  - Martin
+  - Halifax
+  - Northampton
+  - Bertie
+  - Hertford
+  - Vance
+  - Warren
+  - Columbus
+
+Northeast:
+  - Pasquotank
+  - Camden
+  - Currituck
+  - Dare
+  - Chowan
+  - Perquimans
+  - Gates
+  - Hyde
+  - Tyrrell
+  - Washington
+
+# Counties not listed anywhere above resolve to hub = "Other" (see geo.py).
