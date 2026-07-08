@@ -1,0 +1,21 @@
+# Normalize line endings to LF in the repository regardless of the
+# checkout platform -- avoids the "LF will be replaced by CRLF" churn seen
+# on this Windows checkout, and keeps diffs clean if this is ever cloned
+# on Linux/Mac.
+* text=auto eol=lf
+
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.env.example text eol=lf
+
+# Binary -- never touch these (also gitignored today, but harmless to be
+# explicit in case a real export ever gets committed intentionally).
+*.xlsx binary
+*.db binary
