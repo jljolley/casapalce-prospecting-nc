@@ -202,16 +202,29 @@ xlsx; a broken environment (venv python missing) logs `FAILED: <error>` and
 exits non-zero, so Task Scheduler will correctly show the run as failed
 rather than silently succeeding.
 
-**Not registered on this machine** -- that's an ongoing, persistent system
-change (it'll keep running weekly in the background indefinitely) worth
-triggering deliberately rather than as a side effect of a build step. To
-register it yourself (adjust day/time as you like):
+**Registered on this machine** as a Windows Scheduled Task (`CasaPlace
+Signals Weekly`), Mondays at 6:00 AM. Runs in "Interactive only" logon mode
+-- it fires only if you're logged into this machine at the scheduled time;
+Windows does not retroactively run a missed interactive task. If you want it
+to run even while logged out, that needs a "run whether user is logged on
+or not" task with stored credentials, which is a bigger security tradeoff
+and wasn't set up here.
+
+Note: `schtasks /tr` chokes on nested quotes around a path containing a
+space (`Jonathan Jolley`), so registration uses the 8.3 short path
+(`C:\Users\JONATH~1\CASAPL~1\...`) instead.
 
 ```
-schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File \"C:\Users\Jonathan Jolley\casaplace-signals\scripts\run_weekly.ps1\"" /sc weekly /d MON /st 06:00
-```
+# check status / next run time
+schtasks /query /tn "CasaPlace Signals Weekly" /fo LIST /v
 
-To remove it later: `schtasks /delete /tn "CasaPlace Signals Weekly" /f`
+# re-create it (e.g. after moving the repo, or to change day/time)
+schtasks /delete /tn "CasaPlace Signals Weekly" /f
+schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File <8.3-short-path-to-run_weekly.ps1>" /sc weekly /d MON /st 06:00
+
+# remove it entirely
+schtasks /delete /tn "CasaPlace Signals Weekly" /f
+```
 
 ## Config
 
