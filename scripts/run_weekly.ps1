@@ -24,6 +24,18 @@ $Since = (Get-Date).AddDays(-10).ToString("yyyy-MM-dd")
 
 New-Item -ItemType Directory -Force -Path (Join-Path $RepoRoot "output") | Out-Null
 
+# Cap log growth -- plain -Append with no bound would grow forever over
+# years of weekly runs. At ~15 lines/run, 2000 lines is roughly 2.5 years of
+# history; trim to the most recent half of that before each run rather than
+# pulling in a full rotation mechanism for a single flat troubleshooting log.
+$MaxLogLines = 2000
+if (Test-Path $LogFile) {
+    $existingLines = Get-Content $LogFile
+    if ($existingLines.Count -gt $MaxLogLines) {
+        $existingLines[-($MaxLogLines / 2)..-1] | Set-Content -Path $LogFile -Encoding utf8
+    }
+}
+
 "[$(Get-Date -Format o)] Starting weekly run (since=$Since)" | Out-File -FilePath $LogFile -Append -Encoding utf8
 
 try {
