@@ -10,6 +10,9 @@ Build status: **Phase 7 of 7 -- feature-complete.** All acceptance criteria
 (Section 10 of the build spec) verified against real data. See the build
 spec for the full phase plan.
 
+**Running this day-to-day?** See [OPERATIONS.md](OPERATIONS.md) -- the rest
+of this file covers how it's built and why, not how to use it week to week.
+
 ## Setup
 
 ```
