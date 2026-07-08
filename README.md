@@ -203,24 +203,29 @@ exits non-zero, so Task Scheduler will correctly show the run as failed
 rather than silently succeeding.
 
 **Registered on this machine** as a Windows Scheduled Task (`CasaPlace
-Signals Weekly`), Mondays at 6:00 AM. Runs in "Interactive only" logon mode
--- it fires only if you're logged into this machine at the scheduled time;
-Windows does not retroactively run a missed interactive task. If you want it
-to run even while logged out, that needs a "run whether user is logged on
-or not" task with stored credentials, which is a bigger security tradeoff
-and wasn't set up here.
+Signals Weekly`), Mondays at 6:00 AM, running as `SYSTEM` -- fires whether
+or not anyone is logged in, no stored user password needed (the built-in
+`SYSTEM` account needs no credentials, which is why this was preferred over
+a "run whether logged on or not" task under your own user, which would have
+required storing your Windows password with the task). Registering as
+`SYSTEM` requires an elevated (Administrator) shell. Verified working: ran
+it on demand (`schtasks /run`), `Last Result` came back `0`, and
+`run_weekly.log` shows `Completed successfully`.
 
 Note: `schtasks /tr` chokes on nested quotes around a path containing a
 space (`Jonathan Jolley`), so registration uses the 8.3 short path
 (`C:\Users\JONATH~1\CASAPL~1\...`) instead.
 
 ```
-# check status / next run time
+# check status / next run time / confirm Run As User: SYSTEM
 schtasks /query /tn "CasaPlace Signals Weekly" /fo LIST /v
 
-# re-create it (e.g. after moving the repo, or to change day/time)
-schtasks /delete /tn "CasaPlace Signals Weekly" /f
-schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File <8.3-short-path-to-run_weekly.ps1>" /sc weekly /d MON /st 06:00
+# trigger it on demand instead of waiting for the schedule
+schtasks /run /tn "CasaPlace Signals Weekly"
+
+# re-create it (e.g. after moving the repo, or to change day/time) --
+# requires an elevated shell for /ru SYSTEM
+schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File <8.3-short-path-to-run_weekly.ps1>" /sc weekly /d MON /st 06:00 /ru SYSTEM /f
 
 # remove it entirely
 schtasks /delete /tn "CasaPlace Signals Weekly" /f
