@@ -1,5 +1,7 @@
 # CasaPlace Signals Engine
 
+[![GitHub repo](https://img.shields.io/badge/GitHub-jljolley%2Fcasapalce--prospecting--nc-blue?logo=github)](https://github.com/jljolley/casapalce-prospecting-nc)
+
 Local tool that pulls NC construction compliance-pain signals, normalizes them
 into one schema, scores them, detects compounding signals, and outputs a
 ranked outreach list.
