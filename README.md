@@ -206,18 +206,40 @@ exits non-zero, so Task Scheduler will correctly show the run as failed
 rather than silently succeeding.
 
 **Registered on this machine** as a Windows Scheduled Task (`CasaPlace
-Signals Weekly`), Mondays at 6:00 AM, running as `SYSTEM` -- fires whether
-or not anyone is logged in, no stored user password needed (the built-in
-`SYSTEM` account needs no credentials, which is why this was preferred over
-a "run whether logged on or not" task under your own user, which would have
-required storing your Windows password with the task). Registering as
-`SYSTEM` requires an elevated (Administrator) shell. Verified working: ran
-it on demand (`schtasks /run`), `Last Result` came back `0`, and
-`run_weekly.log` shows `Completed successfully`.
+Signals Weekly`), running as `SYSTEM` -- fires whether or not anyone is
+logged in, no stored user password needed (the built-in `SYSTEM` account
+needs no credentials, which is why this was preferred over a "run whether
+logged on or not" task under your own user, which would have required
+storing your Windows password with the task). Registering or changing it
+requires an elevated (Administrator) shell -- every command below needs
+that.
 
 Note: `schtasks /tr` chokes on nested quotes around a path containing a
 space (`Jonathan Jolley`), so registration uses the 8.3 short path
 (`C:\Users\JONATH~1\CASAPL~1\...`) instead.
+
+**Currently: Mondays at 10:00 AM.** It was originally 6:00 AM, but the
+6am slot got silently skipped twice in a row (see `Get-ScheduledTaskInfo`
+history) -- the machine wasn't reliably on/awake at that hour, and by
+default a missed Windows Scheduled Task trigger just gets dropped with no
+retry and no error logged. Fixed two ways:
+
+1. Moved the trigger to 10am, a time the machine is actually on.
+2. Hardened the task's settings regardless, so a miss at any hour degrades
+   gracefully instead of silently skipping a whole week:
+   ```powershell
+   # requires elevated PowerShell
+   $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -WakeToRun
+   Set-ScheduledTask -TaskName "CasaPlace Signals Weekly" -Settings $settings
+   ```
+   - `StartWhenAvailable` -- if the machine was off, run as soon as it's next on, instead of waiting a full week.
+   - `AllowStartIfOnBatteries` -- don't skip it just because a laptop is unplugged.
+   - `WakeToRun` -- wake a *sleeping* machine to run it (does **not** wake one that's fully shut down -- that needs a BIOS-level wake timer, outside Windows). Also requires "Allow wake timers" enabled in the active power plan:
+     ```powershell
+     # does NOT require elevation
+     powercfg /setacvalueindex SCHEME_CURRENT SUB_SLEEP RTCWAKE 1
+     powercfg /setdcvalueindex SCHEME_CURRENT SUB_SLEEP RTCWAKE 1
+     ```
 
 ```
 # check status / next run time / confirm Run As User: SYSTEM
@@ -226,9 +248,12 @@ schtasks /query /tn "CasaPlace Signals Weekly" /fo LIST /v
 # trigger it on demand instead of waiting for the schedule
 schtasks /run /tn "CasaPlace Signals Weekly"
 
-# re-create it (e.g. after moving the repo, or to change day/time) --
-# requires an elevated shell for /ru SYSTEM
-schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File <8.3-short-path-to-run_weekly.ps1>" /sc weekly /d MON /st 06:00 /ru SYSTEM /f
+# change just the time (requires an elevated shell)
+schtasks /change /tn "CasaPlace Signals Weekly" /st 10:00
+
+# re-create it from scratch (e.g. after moving the repo) --
+# requires an elevated shell for /ru SYSTEM; re-apply the settings above after
+schtasks /create /tn "CasaPlace Signals Weekly" /tr "powershell.exe -ExecutionPolicy Bypass -File <8.3-short-path-to-run_weekly.ps1>" /sc weekly /d MON /st 10:00 /ru SYSTEM /f
 
 # remove it entirely
 schtasks /delete /tn "CasaPlace Signals Weekly" /f

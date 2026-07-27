@@ -10,7 +10,7 @@ why (architecture, per-source data-quality notes, design decisions), see
 
 | | Automatic | Manual |
 |---|---|---|
-| OSHA + 5 permit feeds | ✅ every Monday 6:00 AM | -- |
+| OSHA + 5 permit feeds | ✅ every Monday 10:00 AM | -- |
 | Scoring / compounding / export | ✅ same run | -- |
 | CRM refresh (HubSpot) | ❌ no live API | you run `crm-load` |
 | LiensNC / lien / license imports | ❌ no safe API (Section 0 guardrail) | you run `import` |
@@ -24,7 +24,7 @@ intentionally manual.
 
 ## 2. Weekly automated cycle — what to expect
 
-Every Monday at 6:00 AM, whether or not you're logged in:
+Every Monday at 10:00 AM, whether or not you're logged in:
 
 1. Pulls OSHA + Mecklenburg/Raleigh/Durham/Greensboro/Winston-Salem permits
    for the last 10 days (a few days of overlap buffer past the 7-day gap —
@@ -42,11 +42,22 @@ Get-Content "C:\Users\Jonathan Jolley\casaplace-signals\output\run_weekly.log" -
 `Last Result` should be `0`. The log ends in `Completed successfully` on a
 good run, or `FAILED: <error>` on a bad one — see [Section 5](#5-troubleshooting).
 
-**If it didn't run:** the task runs as `SYSTEM` specifically so logon state
-doesn't matter, but if the machine itself was off/asleep at 6:00 AM Monday,
-Windows does not retroactively fire a missed task. Trigger it manually:
+**If it didn't run:** the schedule moved from 6:00 AM to 10:00 AM after the
+6am slot got silently skipped twice in a row -- the machine wasn't reliably
+on at that hour, and by default a missed trigger just gets dropped with no
+retry and no error logged (`Next Run Time` silently jumps a full week ahead
+with nothing recorded). The task's settings are now hardened against this
+(`StartWhenAvailable` + `AllowStartIfOnBatteries` + `WakeToRun`, see
+README's Scheduling section for the exact commands), so a miss at 10am
+should now catch up automatically once the machine is next on, rather than
+silently waiting a week. If you still don't see a fresh export, trigger it
+manually:
 ```powershell
 schtasks /run /tn "CasaPlace Signals Weekly"
+```
+and confirm with:
+```powershell
+schtasks /query /tn "CasaPlace Signals Weekly" /fo LIST /v | Select-String "Last Run Time|Last Result"
 ```
 
 ---
