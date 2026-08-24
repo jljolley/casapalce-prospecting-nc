@@ -38,13 +38,28 @@ if (Test-Path $LogFile) {
 
 "[$(Get-Date -Format o)] Starting weekly run (since=$Since)" | Out-File -FilePath $LogFile -Append -Encoding utf8
 
+# Capture stderr to its own file so a failure logs the REAL error, not just
+# an exit code. This has to go through cmd.exe, not a native PowerShell
+# redirect: PowerShell 5.1 wraps a native exe's stderr lines in
+# ErrorRecord/NativeCommandError formatting noise even with a plain "2>" (not
+# just "2>&1") -- cmd.exe's redirection doesn't do that, so the file ends up
+# with the actual traceback text, not "python.exe : ...At line 1 char 1...".
+# A prior version of this script had no stderr capture at all, so three real
+# failures in August only ever logged "exited with code 1" with nothing to
+# diagnose from.
+$StderrFile = Join-Path $RepoRoot "output\run_weekly_stderr.tmp.log"
+$cmdLine = "`"$PythonExe`" -m src.main run-all --since $Since 2> `"$StderrFile`""
+
 try {
-    & $PythonExe -m src.main run-all --since $Since | Out-File -FilePath $LogFile -Append -Encoding utf8
+    cmd /c $cmdLine | Out-File -FilePath $LogFile -Append -Encoding utf8
     if ($LASTEXITCODE -ne 0) {
-        throw "run-all exited with code $LASTEXITCODE"
+        $errorText = if (Test-Path $StderrFile) { (Get-Content $StderrFile -Raw).Trim() } else { "" }
+        throw "run-all exited with code ${LASTEXITCODE}:`n$errorText"
     }
     "[$(Get-Date -Format o)] Completed successfully" | Out-File -FilePath $LogFile -Append -Encoding utf8
 } catch {
     "[$(Get-Date -Format o)] FAILED: $_" | Out-File -FilePath $LogFile -Append -Encoding utf8
     throw
+} finally {
+    Remove-Item -Path $StderrFile -ErrorAction SilentlyContinue
 }
